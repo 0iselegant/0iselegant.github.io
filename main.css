@@ -1,0 +1,138 @@
+* {
+    font-family: sans-serif;
+}
+body {
+    margin: 0px;
+    position: relative;
+    top: -20px;
+}
+h3 {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+nav {
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+i {
+    opacity: 0.5;
+}
+nav div {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 15px;
+    display: inline-block;
+    position: relative;
+}
+nav div:hover {
+    cursor: pointer;
+}
+nav div ul {
+    background-color: #34495e;
+    color: white;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+    list-style: none;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border-radius: 4px;
+    margin-top: 25px;
+    position: fixed;
+    z-index: 1;
+}
+.visited {
+    background-color: rgba(0, 190, 218, 0.75);
+}
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(.3);
+        background-color: rgba(0, 0, 66, 0.75);
+        border-radius: 100%;
+    }
+    50% {
+        background-color: rgba(17, 104, 217, 0.75);
+    }
+    75% {
+        transform: scale(1.2);
+        background-color: rgba(0, 217, 159, 0.75);
+    }
+    100% {
+        transform: scale(1.0);
+        background-color: rgba(0, 190, 218, 0.75);
+    }
+}
+.visitedAnimated {
+    border: 1px solid rgb(175, 216, 248);
+    animation-name: visitedAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+.wall {
+    background-color: gray;
+}
+.path {
+    background-color: yellow;
+}
+.start {
+    background-color: red;
+}
+.goal {
+    background-color: lightgreen;
+}
+#navbar-container {
+    background-color:#34495e;
+    color: white;
+}
+#main-grid {
+    border-collapse: collapse;
+    position: relative;
+    top: 45px;
+}
+#main-grid, tr, td {
+    border: 1px solid rgb(175, 216, 248); 
+}
+#main-grid td {
+    text-align: center;
+    width: 25px;
+    height: 23px;
+}
+#space {
+    height: 100px;
+}
+#description {
+    color: #34495e;
+    text-align: center;
+    padding-top: 30px;
+}
+#space ul {
+    padding-top: 20px;
+}
+#space ul li {
+    color: #34495e;
+    display: inline-block;
+    padding-left: 15px;
+    padding-right: 40px;
+}
+#space ul li div {
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgb(175, 216, 248);
+    display: inline-block;
+    position: relative;
+    top: 6px;
+}
+#visualise {
+    width: 100px;
+}
