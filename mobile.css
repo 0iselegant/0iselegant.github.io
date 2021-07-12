@@ -16,7 +16,7 @@ section {
     overflow-x: hidden;
 }
 nav {
-    height: 50px;
+    height: 60px;
     display: flex;
     align-items: center;
 }
