@@ -13,6 +13,7 @@ h3 {
 }
 nav {
     height: 110px;
+    overflow: scroll;
 }
 i {
     opacity: 0.5;
