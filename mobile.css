@@ -109,14 +109,14 @@ nav div ul {
 }
 #space {
     height: 100px;
+    display: grid;
+    align-items: space-between;
+    align-content: center;
 }
 #description {
     color: #34495e;
     text-align: center;
     padding-top: 30px;
-}
-#space ul {
-    padding-top: 20px;
 }
 #space ul li {
     color: #34495e;
