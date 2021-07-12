@@ -107,14 +107,16 @@ function breadthFirstSearch(start, goal, speed) {
             clearInterval(holder);
             return;
         }
-        let cell = grid.querySelector(`td[id="${current[0]}-${current[1]}"]`);
-        if (!cell.className.includes('draggable')) {
+        let cell = grid.rows[current[0]].cells[current[1]];
+        if (cell.className != 'draggable start' && cell.className != 'draggable goal') {
             cell.className = 'visitedAnimated';
         }
         let neighbours = [[current[0],current[1]-1], [current[0],current[1]+1], [current[0]+1,current[1]], [current[0]-1,current[1]]];
         neighbours = neighbours.filter(coords => {
-            const cell = grid.querySelector(`td[id="${coords[0]}-${coords[1]}"]`);
-            return cell != null && cell.className != 'wall';
+            if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
+                return false;
+            }
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             if (!cameFrom.hasOwnProperty(neighbour)) {
@@ -143,14 +145,16 @@ function dijkstrasAlgorithm(start, goal, speed) {
             clearInterval(holder);
             return;
         }
-        let cell = grid.querySelector(`td[id="${current[0]}-${current[1]}"]`);
-        if (!cell.className.includes('draggable')) {
+        let cell = grid.rows[current[0]].cells[current[1]];
+        if (cell.className != 'draggable start' && cell.className != 'draggable goal') {
             cell.className = 'visitedAnimated';
         }
         let neighbours = [[current[0],current[1]-1], [current[0],current[1]+1], [current[0]+1,current[1]], [current[0]-1,current[1]]];
         neighbours = neighbours.filter(coords => {
-            const cell = grid.querySelector(`td[id="${coords[0]}-${coords[1]}"]`);
-            return cell != null && cell.className != 'wall';
+            if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
+                return false;
+            }
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             let cost = grid.querySelector(`td[id="${neighbour[0]}-${neighbour[1]}"]`).innerHTML;
@@ -181,14 +185,16 @@ function greedyBestFirstSearch(start, goal, speed) {
             clearInterval(holder);
             return;
         }
-        let cell = grid.querySelector(`td[id="${current[0]}-${current[1]}"]`);
-        if (!cell.className.includes('draggable')) {
+        let cell = grid.rows[current[0]].cells[current[1]];
+        if (cell.className != 'draggable start' && cell.className != 'draggable goal') {
             cell.className = 'visitedAnimated';
         }
         let neighbours = [[current[0],current[1]-1], [current[0],current[1]+1], [current[0]+1,current[1]], [current[0]-1,current[1]]];
         neighbours = neighbours.filter(coords => {
-            const cell = grid.querySelector(`td[id="${coords[0]}-${coords[1]}"]`);
-            return cell != null && cell.className != 'wall';
+            if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
+                return false;
+            }
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             if (!cameFrom.hasOwnProperty(neighbour)) {
@@ -217,14 +223,16 @@ function aStar(start, goal, speed) {
             clearInterval(holder);
             return;
         }
-        let cell = grid.querySelector(`td[id="${current[0]}-${current[1]}"]`);
-        if (!cell.className.includes('draggable')) {
+        let cell = grid.rows[current[0]].cells[current[1]];
+        if (cell.className != 'draggable start' && cell.className != 'draggable goal') {
             cell.className = 'visitedAnimated';
         }
         let neighbours = [[current[0],current[1]-1], [current[0],current[1]+1], [current[0]+1,current[1]], [current[0]-1,current[1]]];
         neighbours = neighbours.filter(coords => {
-            const cell = grid.querySelector(`td[id="${coords[0]}-${coords[1]}"]`);
-            return cell != null && cell.className != 'wall';
+            if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
+                return false;
+            }
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             let cost = grid.querySelector(`td[id="${neighbour[0]}-${neighbour[1]}"]`).innerHTML;
@@ -258,8 +266,7 @@ function instantBreadthFirstSearch(start, goal) {
             if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
                 return false;
             }
-            let cell = grid.rows[coords[0]].cells[coords[1]];
-            return cell.className != 'wall';
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             if (!cameFrom.hasOwnProperty(neighbour)) {
@@ -295,8 +302,7 @@ function instantDijkstrasAlgorithm(start, goal) {
             if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
                 return false;
             }
-            let cell = grid.rows[coords[0]].cells[coords[1]];
-            return cell.className != 'wall';
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             let cost = grid.rows[neighbour[0]].cells[neighbour[1]].innerHTML;
@@ -334,8 +340,7 @@ function instantGreedyBestFirstSearch(start, goal) {
             if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
                 return false;
             }
-            let cell = grid.rows[coords[0]].cells[coords[1]];
-            return cell.className != 'wall';
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             if (!cameFrom.hasOwnProperty(neighbour)) {
@@ -371,8 +376,7 @@ function instantAStar(start, goal) {
             if (coords[0] < 0 || coords[0] >= grid.rows.length || coords[1] < 0 || coords[1] >= grid.rows[0].cells.length) {
                 return false;
             }
-            let cell = grid.rows[coords[0]].cells[coords[1]];
-            return cell.className != 'wall';
+            return grid.rows[coords[0]].cells[coords[1]].className != 'wall';
         });
         for (let neighbour of neighbours) {
             let cost = grid.rows[neighbour[0]].cells[neighbour[1]].innerHTML;
