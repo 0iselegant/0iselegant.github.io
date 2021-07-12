@@ -5,12 +5,15 @@ body {
     margin: 0px;
     position: relative;
     top: -50px;
-    overflow-x: hidden;
 }
 h3 {
     font-size: 50px;
     padding-left: 20px;
     padding-top: 15px;
+}
+section {
+    display: flex;
+    overflow-x: hidden;
 }
 nav {
     height: 80px;
