@@ -1,4 +1,4 @@
-document.body.onmousemove = function() {return false};
+document.body.onmousepointer = function() {return false};
 const navbar = document.querySelector('nav');
 function hoverFunction(event) {
     if (event.target.tagName != 'DIV') {
@@ -57,7 +57,7 @@ scrollContainer.onpointerdown = function(event) {
     prevCoords = event.clientX;
 }
 scrollContainer.onpointermove = function(event) {
-    scrollContainer.scrollLeft += prevCoords - event.clientX + 'px';
+    scrollContainer.scrollLeft += prevCoords - event.clientX;
     prevCoords = event.clientX;
 }
 const grid = document.querySelector('table[id="main-grid"]');
