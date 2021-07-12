@@ -50,6 +50,11 @@ navbar.onclick = function(event) {
     }
 }
 
+const scrollContainer = document.querySelector('section');
+scrollContainer.addEventListener('wheel', function(event) {
+    event.preventDefault();
+    scrollContainer.scrollLeft += event.deltaX;
+});
 const grid = document.querySelector('table[id="main-grid"]');
 function generateGrid() {
     let size = document.documentElement.clientWidth > 1000? 25: 75; 
