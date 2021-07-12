@@ -111,7 +111,7 @@ nav div ul {
     height: 100px;
     display: grid;
     align-items: space-between;
-    align-content: center;
+    align-content: bottom;
 }
 #description {
     color: #34495e;
