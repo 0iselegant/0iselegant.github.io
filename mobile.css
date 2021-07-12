@@ -28,8 +28,10 @@ nav div {
     font-weight: bold;
     text-align: center;
     padding-left: 20px;
-    padding-right: 60px;
+    padding-right: 20px;
     padding-top: 10px;
+    margin-right: 40px;
+    margin-left: 20px;
     white-space: nowrap;
 }
 nav div:hover {
