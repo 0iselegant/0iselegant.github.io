@@ -14,7 +14,7 @@ h3 {
 }
 nav {
     height: 80px;
-    display: grid;
+    display: flex;
     align-items: center;
 }
 i {
