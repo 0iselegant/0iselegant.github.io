@@ -110,8 +110,7 @@ nav div ul {
 #space {
     height: 100px;
     display: grid;
-    align-items: space-between;
-    align-content: bottom;
+    align-items: space-evenly;
 }
 #description {
     color: #34495e;
