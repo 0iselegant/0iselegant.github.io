@@ -25,7 +25,6 @@ nav div {
     padding-left: 20px;
     padding-right: 30px;
     padding-top: 15px;
-    display: inline-block;
     position: relative;
 }
 nav div:hover {
