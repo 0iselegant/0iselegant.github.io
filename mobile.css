@@ -30,6 +30,7 @@ nav div {
     padding-left: 20px;
     padding-right: 30px;
     padding-top: 10px;
+    white-space: nowrap;
 }
 nav div:hover {
     cursor: pointer;
