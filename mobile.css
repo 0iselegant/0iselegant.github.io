@@ -7,7 +7,7 @@ body {
     top: -55px;
 }
 h3 {
-    font-size: 55px;
+    font-size: 50px;
     padding-left: 20px;
     padding-top: 15px;
 }
@@ -16,7 +16,7 @@ section {
     overflow-x: hidden;
 }
 nav {
-    height: 60px;
+    height: 65px;
     display: flex;
     align-items: center;
 }
@@ -24,11 +24,11 @@ i {
     opacity: 0.5;
 }
 nav div {
-    font-size: 40px;
+    font-size: 35px;
     font-weight: bold;
     text-align: center;
     padding-left: 20px;
-    padding-right: 30px;
+    padding-right: 60px;
     padding-top: 10px;
     white-space: nowrap;
 }
