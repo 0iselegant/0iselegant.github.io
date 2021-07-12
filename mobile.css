@@ -5,6 +5,7 @@ body {
     margin: 0px;
     position: relative;
     top: -50px;
+    overflow-x: hidden;
 }
 h3 {
     font-size: 50px;
@@ -13,7 +14,8 @@ h3 {
 }
 nav {
     height: 80px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 i {
     opacity: 0.5;
@@ -25,7 +27,6 @@ nav div {
     padding-left: 20px;
     padding-right: 30px;
     padding-top: 15px;
-    display: inline-block;
 }
 nav div:hover {
     cursor: pointer;
