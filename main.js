@@ -51,10 +51,15 @@ navbar.onclick = function(event) {
 }
 
 const scrollContainer = document.querySelector('section');
-scrollContainer.addEventListener('wheel', function(event) {
-    event.preventDefault();
-    scrollContainer.scrollLeft += event.deltaX;
-});
+let prevCoords;
+scrollContainer.onpointerdown = function(event) {
+    scrollContainer.setPointerCapture(event.pointerId);
+    prevCoords = event.clientX;
+}
+scrollContainer.onpointermove = function(event) {
+    scrollContainer.scrollLeft += prevCoords - event.clientX + 'px';
+    prevCoords = event.clientX;
+}
 const grid = document.querySelector('table[id="main-grid"]');
 function generateGrid() {
     let size = document.documentElement.clientWidth > 1000? 25: 75; 
