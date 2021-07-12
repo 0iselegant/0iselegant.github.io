@@ -450,9 +450,10 @@ algorithmsList.onclick = function(event) {
     visualise.innerHTML = 'Visualise ' + algorithmsShorthand[currentAlgorithm];
     description.innerHTML = algorithmsDescription[currentAlgorithm];
 }
-let startCell = grid.querySelector('td[id="10-12"]');
+let windowWidth = document.documentElement.clientWidth;
+let startCell = windowWidth > 1000? grid.querySelector('td[id="10-12"]'): grid.querySelector('td[id="7-2"]');
 startCell.className = 'draggable start';
-let goalCell = grid.querySelector('td[id="10-38"]');
+let goalCell = windowWidth > 1000? grid.querySelector('td[id="10-38"]'): grid.querySelector('td[id="7-8"]');
 goalCell.className = 'draggable goal';
 visualise.onclick = function() {
     clearPath();
