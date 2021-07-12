@@ -16,7 +16,7 @@ section {
     overflow-x: hidden;
 }
 nav {
-    height: 65px;
+    height: 55px;
     display: flex;
     align-items: center;
 }
@@ -29,7 +29,7 @@ nav div {
     text-align: center;
     padding-left: 20px;
     padding-right: 30px;
-    padding-top: 15px;
+    padding-top: 10px;
 }
 nav div:hover {
     cursor: pointer;
