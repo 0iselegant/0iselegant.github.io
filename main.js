@@ -519,6 +519,7 @@ const pathClear = document.querySelector('div[id="path-clear"]');
 pathClear.onclick = clearPath;
 for (let draggable of document.querySelectorAll('.draggable')) {
     draggable.onpointerdown = function onPointerDown(event) {
+        event.preventDefault();
         grid.removeEventListener('mousedown', handleMousedown);
         let currentCell = document.elementFromPoint(event.pageX, event.pageY);
         document.addEventListener('pointermove', onPointerMove);
