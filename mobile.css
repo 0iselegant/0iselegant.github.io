@@ -16,7 +16,7 @@ section {
     overflow-x: hidden;
 }
 nav {
-    height: 80px;
+    height: 120px;
     display: flex;
     align-items: center;
 }
@@ -30,7 +30,7 @@ nav div {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 15px;
-    margin-right: 40px;
+    margin-right: 80px;
     margin-left: 20px;
     white-space: nowrap;
 }
