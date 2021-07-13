@@ -18,7 +18,7 @@ section {
 nav {
     height: 120px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
 }
 i {
     opacity: 0.5;
