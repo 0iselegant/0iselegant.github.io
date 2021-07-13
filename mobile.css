@@ -34,7 +34,7 @@ nav div {
     margin-right: 80px;
     margin-left: 20px;
     white-space: nowrap;
-    position: relative;
+    position: absolute;
 }
 nav div:hover {
     cursor: pointer;
