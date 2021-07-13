@@ -51,7 +51,7 @@ nav div ul {
     padding-right: 5px;
     border-radius: 4px;
     margin-top: 25px;
-    position: absolute;
+    position: fixed;
     z-index: 1;
 }
 .visited {
