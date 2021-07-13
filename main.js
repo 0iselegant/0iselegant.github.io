@@ -1,4 +1,3 @@
-//document.body.onpointerdown = function() {return false};
 const navbar = document.querySelector('nav');
 function hoverFunction(event) {
     if (event.target.tagName != 'DIV') {
@@ -519,12 +518,10 @@ const pathClear = document.querySelector('div[id="path-clear"]');
 pathClear.onclick = clearPath;
 for (let draggable of document.querySelectorAll('.draggable')) {
     draggable.onpointerdown = function onPointerDown(event) {
-        event.preventDefault();
         grid.removeEventListener('mousedown', handleMousedown);
         let currentCell = document.elementFromPoint(event.pageX, event.pageY);
         document.addEventListener('pointermove', onPointerMove);
         function onPointerMove(event) {
-            event.preventDefault();
             let newCell = document.elementFromPoint(event.pageX, event.pageY);
             if (currentCell != newCell) {
                 if (newCell.tagName != 'TD') {
