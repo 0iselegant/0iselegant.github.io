@@ -102,10 +102,16 @@ function handleMouseup() {
     nodeSelected = false;
 }
 function generateWall(target) {
-    target.className = target.className != 'wall'? !target.className.includes('draggable')? 'wall': target.className: '';
+    if (target.className.includes('draggable')) {
+        return;
+    }
+    target.className = target.className != 'wall'? 'wall': '';
     target.innerHTML = '';
 }
 function generateWeight(target) {
+    if (target.className.includes('draggable')) {
+        return;    
+    }
     target.innerHTML = target.innerHTML? Number(target.innerHTML) + 1: 1;
     target.className = '';
 }
