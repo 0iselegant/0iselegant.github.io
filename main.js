@@ -28,7 +28,7 @@ navbar.onclick = function(event) {
             event.target.style.color = 'white';
             event.target.onmouseover = null;
             event.target.onmouseout = null;
-            element.style.display = '';
+            element.style.display = 'block';
         }
         return;
     }
