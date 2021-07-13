@@ -29,8 +29,6 @@ navbar.onclick = function(event) {
             event.target.onmouseover = null;
             event.target.onmouseout = null;
             element.style.display = '';
-            element.style.top = '90px';
-            element.style.left = '0px';
         }
         return;
     }
