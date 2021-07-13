@@ -518,11 +518,11 @@ const instantAlgorithmsLookup = {
 const pathClear = document.querySelector('div[id="path-clear"]');
 pathClear.onclick = clearPath;
 for (let draggable of document.querySelectorAll('.draggable')) {
-    draggable.onmousedown = function onMouseDown(event) {
+    draggable.onpointerdown = function onPointerDown(event) {
         grid.removeEventListener('mousedown', handleMousedown);
         let currentCell = document.elementFromPoint(event.pageX, event.pageY);
-        document.addEventListener('mousemove', onMouseMove);
-        function onMouseMove(event) {
+        document.addEventListener('pointermove', onPointerMove);
+        function onPointerMove(event) {
             let newCell = document.elementFromPoint(event.pageX, event.pageY);
             if (currentCell != newCell) {
                 if (newCell.tagName != 'TD') {
@@ -541,14 +541,14 @@ for (let draggable of document.querySelectorAll('.draggable')) {
                     clearPath();
                     instantAlgorithmsLookup[currentAlgorithm](startCoords, goalCoords);
                 };
-                currentCell.onmousedown = null;
-                newCell.onmousedown = onMouseDown;
+                currentCell.onpointerdown = null;
+                newCell.onpointerdown = onPointerDown;
             }
             currentCell = newCell;
         }
-        document.onmouseup = function() {
-            document.removeEventListener('mousemove', onMouseMove);
-            document.onmouseup = null;
+        document.onpointerup = function() {
+            document.removeEventListener('pointermove', onPointerMove);
+            document.onpointerup = null;
             if (currentCell.className.includes('start')) {
                 startCell = currentCell;
             }
