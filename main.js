@@ -69,7 +69,7 @@ scrollContainer.onpointerup = function(event) {
 const grid = document.querySelector('table[id="main-grid"]');
 function generateGrid() {
     let size = document.documentElement.clientWidth > 1000? 25: 75; 
-    const rows = Math.floor(document.documentElement.clientHeight / size - document.body.clientHeight / size) - 2;
+    const rows = Math.floor(document.documentElement.clientHeight / size - document.body.clientHeight / size) - 1;
     const columns = Math.floor(document.documentElement.clientWidth / size);
     for (let i = 0; i < rows; i++) {
         const newColumn = document.createElement('tr');
