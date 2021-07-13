@@ -28,12 +28,8 @@ navbar.onclick = function(event) {
             event.target.style.color = 'white';
             event.target.onmouseover = null;
             event.target.onmouseout = null;
-            element.style.display = '';
+            element.style.display = 'block';
             let coords = event.target.getBoundingClientRect();
-            alert(coords.right);
-            alert(coords.top);
-            alert(document.documentElement.clientWidth);
-            alert(document.documentElement.clientHeight);
             element.style.left = coords.left + 'px';
             element.style.top = coords.bottom + 'px'; 
         }
