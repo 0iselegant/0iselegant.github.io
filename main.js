@@ -79,11 +79,14 @@ grid.addEventListener('mousedown', handleMousedown);
 grid.addEventListener('mouseover', handleMouseover);
 grid.addEventListener('mouseup', handleMouseup);
 let nodeSelected = false;
+let weightSelected = false;
+const weightTap = document.querySelector('li[id="weight-tap"]');
+weightTap.addEventListener('click', function() {weightSelected = !weightSelected;});
 function handleMousedown(event) {
     if (event.target.tagName != 'TD') {
         return;
     }
-    event.shiftKey? generateWeight(event.target): generateWall(event.target);
+    event.shiftKey || weightSelected? generateWeight(event.target): generateWall(event.target);
     nodeSelected = true;
     event.preventDefault();
 }
@@ -92,7 +95,7 @@ function handleMouseover(event) {
         return;
     }
     if (nodeSelected) {
-        event.shiftKey? generateWeight(event.target): generateWall(event.target);
+        event.shiftKey || weightSelected? generateWeight(event.target): generateWall(event.target);
     }
 }
 function handleMouseup() {
