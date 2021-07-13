@@ -524,6 +524,7 @@ for (let draggable of document.querySelectorAll('.draggable')) {
         let currentCell = document.elementFromPoint(event.pageX, event.pageY);
         document.addEventListener('pointermove', onPointerMove);
         function onPointerMove(event) {
+            event.preventDefault();
             let newCell = document.elementFromPoint(event.pageX, event.pageY);
             if (currentCell != newCell) {
                 if (newCell.tagName != 'TD') {
