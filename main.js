@@ -518,6 +518,7 @@ const pathClear = document.querySelector('div[id="path-clear"]');
 pathClear.onclick = clearPath;
 for (let draggable of document.querySelectorAll('.draggable')) {
     draggable.onpointerdown = function onPointerDown(event) {
+        draggable.setPointerCapture(event.pointerId);
         grid.removeEventListener('mousedown', handleMousedown);
         let currentCell = document.elementFromPoint(event.pageX, event.pageY);
         document.addEventListener('pointermove', onPointerMove);
@@ -546,7 +547,6 @@ for (let draggable of document.querySelectorAll('.draggable')) {
             currentCell = newCell;
         }
         document.onpointerup = function() {
-            alert('yay');
             document.removeEventListener('pointermove', onPointerMove);
             document.onpointerup = null;
             if (currentCell.className.includes('start')) {
