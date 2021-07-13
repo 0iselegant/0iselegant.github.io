@@ -30,6 +30,10 @@ navbar.onclick = function(event) {
             event.target.onmouseout = null;
             element.style.display = '';
             let coords = event.target.getBoundingClientRect();
+            alert(coords.right);
+            alert(coords.top);
+            alert(document.documentElement.clientWidth);
+            alert(document.documentElement.clientHeight);
             element.style.left = coords.left;
             element.style.top = coords.bottom + 20 + 'px'; 
         }
