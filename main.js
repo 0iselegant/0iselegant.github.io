@@ -546,6 +546,7 @@ for (let draggable of document.querySelectorAll('.draggable')) {
             currentCell = newCell;
         }
         document.onpointerup = function() {
+            alert('yay');
             document.removeEventListener('pointermove', onPointerMove);
             document.onpointerup = null;
             if (currentCell.className.includes('start')) {
