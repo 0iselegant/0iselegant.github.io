@@ -1,4 +1,4 @@
-document.body.onpointermove = function() {return false};
+document.body.onpointerdown = function() {return false};
 const navbar = document.querySelector('nav');
 function hoverFunction(event) {
     if (event.target.tagName != 'DIV') {
