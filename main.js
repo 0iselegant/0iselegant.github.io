@@ -29,12 +29,7 @@ navbar.onclick = function(event) {
             event.target.onmouseover = null;
             event.target.onmouseout = null;
             element.style.display = 'block';
-            alert(element.getBoundingClientRect().right);
-            alert(element.getBoundingClientRect().top);
-            alert(document.documentElement.clientWidth);
-            alert(document.documentElement.clientHeight);
-            alert(element.clientWidth);
-            alert(element.clientHeight);
+            element.style.position = 'fixed';
         }
         return;
     }
