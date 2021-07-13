@@ -54,13 +54,17 @@ navbar.onclick = function(event) {
 
 const scrollContainer = document.querySelector('section');
 let prevCoords;
+function scrollMove(event) {
+    scrollContainer.scrollLeft += prevCoords - event.clientX;
+    prevCoords = event.clientX;
+}
 scrollContainer.onpointerdown = function(event) {
     scrollContainer.setPointerCapture(event.pointerId);
     prevCoords = event.clientX;
+    document.body.addEventListener('pointermove', scrollMove);
 }
-scrollContainer.onpointermove = function(event) {
-    scrollContainer.scrollLeft += prevCoords - event.clientX;
-    prevCoords = event.clientX;
+scrollContainer.onpointerup = function(event) {
+    document.body.removeEventListener('pointermove', scrollMove);
 }
 const grid = document.querySelector('table[id="main-grid"]');
 function generateGrid() {
