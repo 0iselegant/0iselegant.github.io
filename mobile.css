@@ -114,6 +114,7 @@ nav div ul {
     border: 1px solid rgb(175, 216, 248); 
 }
 #main-grid td {
+    font-size: 45px;
     text-align: center;
     width: 75px;
     height: 75px;
