@@ -31,7 +31,8 @@ navbar.onclick = function(event) {
             element.style.display = 'block';
             let coords = event.target.getBoundingClientRect();
             element.style.left = coords.left + 'px';
-            element.style.top = coords.bottom + window.pageYOffset + 'px'; 
+            let newCoords = coords.bottom + window.pageYOffset;
+            element.style.top = document.documentElement.clientWidth > 1000? newCoords + 4 + 'px': newCoords + 20 + 'px';
         }
         return;
     }
