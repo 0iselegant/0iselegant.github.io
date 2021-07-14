@@ -33,7 +33,6 @@ nav div {
     padding-bottom: 15px;
     margin-right: 80px;
     margin-left: 20px;
-    margin-top: 85px;
     white-space: nowrap;
 }
 nav div:hover {
@@ -51,7 +50,7 @@ nav div ul {
     padding-bottom: 5px;
     padding-right: 5px;
     border-radius: 4px;
-    margin-top: 25px;
+    margin-top: 85px;
     position: absolute;
     z-index: 1;
 }
